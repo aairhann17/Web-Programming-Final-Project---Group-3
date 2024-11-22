@@ -1,74 +1,191 @@
-body{
+/* General Styling */
+body {
     margin: 0;
     font-family: Verdana, Tahoma, sans-serif;
-    background-color: white;
+    scroll-behavior: smooth; /* Enables smooth scrolling for anchor links */
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+a:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar a {
+    color: white;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    background-color: #555;
+    color: #fff;
+}
+
+/* Home Page Specific */
+body.home-page {
+    background-color: #f5f5f5; /* Light gray background for the home page */
+}
+
+body.home-page .container {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+body.home-page h1 {
+    font-size: 3rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+body.home-page p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* About Us and Contact Sections */
+.about-section, .contact-section {
+    padding: 40px 20px;
+    background-color: #fff; /* White background for sections */
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid #ccc;
+}
+
+.about-section h2, .contact-section h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.about-section p, .contact-section p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* Artists Page Specific */
+body.artists-page {
+    background-color: #f5f5f5;
+}
+
+body.artists-page .container {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+body.artists-page h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+body.artists-page p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+body.artists-page .artist-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+body.artists-page .artist-grid div {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Login Page Specific */
+body.login-page {
+    background-color: #f5f5f5;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-
 }
 
-.login-container{
+body.login-page .login-container {
     background-color: white;
-    padding: 20px;
+    padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     width: 80%;
-    max-width: 500px;
+    max-width: 400px;
     text-align: center;
 }
 
-h2{
-    margin-bottom: 20px;
+body.login-page h2 {
+    font-size: 2rem;
     color: #333;
+    margin-bottom: 20px;
 }
 
-.form-group{
-    margin-bottom: 15px;
-    text-align: left;
-    width: 95%;    
-}
-
-label{
+body.login-page label {
     display: block;
     margin-bottom: 5px;
+    font-size: 1rem;
     color: #555;
 }
 
-input{
+body.login-page input {
     width: 100%;
     padding: 10px;
+    margin-bottom: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 14px;
+    font-size: 1rem;
 }
 
-button{
+body.login-page button {
     width: 100%;
     padding: 10px;
     background-color: #007bff;
     color: white;
     border: none;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 1.2rem;
     cursor: pointer;
 }
 
-button:hover{
+body.login-page button:hover {
     background-color: #0056b3;
 }
 
-p{
+body.login-page p {
+    font-size: 1rem;
+    color: #555;
     margin-top: 10px;
-    font-size: 14px;
 }
 
-a{
+body.login-page a {
     color: #007bff;
-    text-decoration: none;
 }
 
-a:hover{
+body.login-page a:hover {
     text-decoration: underline;
 }
