@@ -152,13 +152,11 @@ body.artists-page .top{
     background-color: tomato; 
 }
 body.artists-page h1 {
-  body.artists-page h1 {
     text-align: center;
     font-size: 2.5rem;
     color: #333;
     margin-bottom: 20px;
     margin-top: 10px;
-}
 }
 
 body.artists-page h2 {
