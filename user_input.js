@@ -10,6 +10,6 @@ loginBtn.addEventListener("click", (e) => {
     const password = loginForm.password.value;
 
     if(username === "" && password === "") {
-        location.reload();
+        location.reload("home.html");
     }
 });
