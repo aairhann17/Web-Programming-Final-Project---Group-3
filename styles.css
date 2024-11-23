@@ -148,9 +148,7 @@ body.artists-page .textbox{
     word-wrap: break-word;
     width: 600px;
 }
-body.artists-page .top{
-    background-color: tomato; 
-}
+
 body.artists-page h1 {
     text-align: center;
     font-size: 2.5rem;
