@@ -119,9 +119,75 @@ body.home-page p {
 
 
 /* Artists Page Specific */
+body.artists-page {
+    background-color: #white;
+}
 
+body.artists-page .container {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    padding: 10px 20px;
+    background-color: #white;
+}
+body.artists-page .lineStyle{
+    margin: auto;
+    height: 10px;
+    width: 1200px;
+    border-radius: 10px;
+    background-color: lightgrey;
+    color: black;
+}
 
+body.artists-page img {
+    margin: 20px;
+    border: 20px;
+}
 
+body.artists-page .textbox{
+    word-wrap: break-word;
+    width: 600px;
+}
+body.artists-page .top{
+    background-color: tomato; 
+}
+body.artists-page h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+    margin-top: 0;
+}
+
+body.artists-page h2 {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #444;
+    margin-bottom: 10px;
+
+}
+
+body.artists-page p {
+    
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+body.artists-page .artist-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+body.artists-page .artist-grid div {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
 /* Login Page Specific */
 body.login-page {
