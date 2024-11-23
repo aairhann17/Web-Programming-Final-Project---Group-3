@@ -24,7 +24,7 @@
 		<p> This is a paragraph about artist one <br>
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tincidunt vel lacus in varius. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus non placerat lacus. Nullam malesuada ultrices elit non mattis. Ut accumsan lobortis odio nec maximus. Donec aliquet urna sed sapien euismod, et volutpat lacus dictum. Proin nec urna orci. Nunc tincidunt vel massa id tincidunt. Donec varius sem sit amet tristique ultrices. Suspendisse id eros turpis. Phasellus vitae dolor est. Aenean mi augue, suscipit sed commodo et, dictum sed tortor. Maecenas rhoncus blandit ipsum vitae mollis. </p>
 	</div>
-		<img src="Paintings/mona_lisa.jpg"
+		<img src="paintings/mona_lisa.jpg"
 		width="250"
 		height="340">
 	</div>
@@ -37,7 +37,7 @@
 	<h2> Starry Night <br>
 	By  Vincent van Gogh (1889) </h2>
 	<div class = "container">
-		<img src="Paintings/starry_night.jpg"
+		<img src="paintings/starry_night.jpg"
 		width="500"
 		height="350">
 	<div class="textbox">
@@ -61,7 +61,7 @@
 		<p> This is a paragraph about artist three <br>
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tincidunt vel lacus in varius. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus non placerat lacus. Nullam malesuada ultrices elit non mattis. Ut accumsan lobortis odio nec maximus. Donec aliquet urna sed sapien euismod, et volutpat lacus dictum. Proin nec urna orci. Nunc tincidunt vel massa id tincidunt. Donec varius sem sit amet tristique ultrices. Suspendisse id eros turpis. Phasellus vitae dolor est. Aenean mi augue, suscipit sed commodo et, dictum sed tortor. Maecenas rhoncus blandit ipsum vitae mollis. </p>
 	</div>
-		<img src="Paintings/storm_on_the_lake.jpg"
+		<img src="paintings/storm_on_the_lake.jpg"
 		width="350"
 		height="450">
 	</div>
