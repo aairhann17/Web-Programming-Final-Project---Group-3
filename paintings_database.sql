@@ -12,6 +12,7 @@ create table userData (
 
 create table painting(
     ID int AUTO_INCREMENT primary key,
+    Paintingdata LONGBLOB,
     PaintingName varchar(255) NOT NULL,
     Artist varchar(255) NOT NULL,
     Year int NOT NULL
