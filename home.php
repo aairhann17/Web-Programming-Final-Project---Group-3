@@ -13,7 +13,8 @@
         <a href="artists.html">Artists</a>
         <a href="#about">About Us</a>
         <a href="#contact">Contact</a>
-        <a href="login.html">Login</a> <!-- Added Login -->
+        <a href="login.html">Login</a>
+        <a href="account.html">Sign Up</a>
     </div>
 
     <!-- Main Content -->
@@ -26,19 +27,19 @@
         <div class="art-pieces">
             <!-- Art Piece 1 -->
             <div class="art-piece">
-                <img src="paintings/mona_lisa.jpg" alt="Mona Lisa">
+                <img src="Mona_Lisa.jpg" alt="Mona Lisa">
                 <p><strong>The Mona Lisa</strong>: A timeless portrait by Leonardo da Vinci, celebrated for its enigmatic smile and masterful technique</p>
             </div>
     
             <!-- Art Piece 2 -->
             <div class="art-piece">
-                <img src="paintings/Van_Gogh.jpg" alt="Van Gogh">
+                <img src="Van_Gogh.jpg" alt="Van Gogh">
                 <p><strong>Van Gogh Self Portrait</strong>: An introspective self-portrait showcasing Van Gogh's bold brushwork and emotional intensity.</p>
             </div>
     
             <!-- Art Piece 3 -->
             <div class="art-piece">
-                <img src="paintings/a_sunday_afternoon.jpg" alt="A Sunday on La Grande Jatte">
+                <img src="a_sunday_afternoon.jpg" alt="A Sunday on La Grande Jatte">
                 <p><strong>A Sunday on La Grande Jatte</strong>: Georges Seurat's masterpiece depicting a serene Parisian park, created using vibrant pointillism.</p>
             </div>
         </div>
