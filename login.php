@@ -34,7 +34,7 @@
             session_start(); //start a session to manage logged in state
 
             //include the database configuaration
-            require_once(config.inc.php);
+            require_once('config.inc.php');
 
             $conn = new mysqli(HOST, USER, PASSWORD, DB, PORT);
 
