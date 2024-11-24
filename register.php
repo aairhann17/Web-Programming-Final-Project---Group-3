@@ -8,6 +8,8 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+$message = "";
+
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Get the form data
@@ -43,13 +45,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             } else {
                 echo "Error: " . $stmt->error;
             }
+            stmt->close();
         }
+        $checkStmt->close();
     }
-    $checkStmt->close();
-    
-
-
-    // Close the statement and connection
-    $conn->close();
 }
+
+// Close the statement and connection
+$conn->close();
 ?>
