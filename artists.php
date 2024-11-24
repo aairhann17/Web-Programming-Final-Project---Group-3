@@ -14,6 +14,7 @@
         <a href="home.php#contact">Contact</a>
         <a href="login.php">Login</a>
 		<a href="account.php">Sign Up</a>
+	<a href="add_art.php">Add Art</a>
     </div>
 	<h1> Our Artists </h1>
 	<hr>
