@@ -30,6 +30,60 @@
             </div>
             <button type="submit" id="submit">Login</button>
         </form>
+        <?php
+            session_start(); //start a session to manage logged in state
+
+            //include the database configuaration
+            require_once(config.inc.php);
+
+            $conn = new mysqli(HOST, USER, PASSWORD, DB, PORT);
+
+            //check for connection errors
+            if($conn->connect_error) {
+                die("Connection failed: " . $conn->connect_error);
+            }
+
+            //check if the form is submitted
+            if($_SERVER["REQUEST_METHOD"] === "POST") {
+                $username = trim($_POST['username']);
+                $password = trim($_POST['password']);
+
+                //validate input
+                if(empty($username) || empty($password)) {
+                    echo "Both fields are required!";
+                    exit();
+                }
+
+                //prepare SQL statement to retrieve the user
+                $stmt = $conn->prepare("SELECT id, username, password FROM userData WHERE username = ?");
+                $stmt->bind_param("s", $username);
+                $stmt->execute();
+                $result = $stmt->get_result();
+
+                if($result->num_rows === 1) {
+                    $row = $result->fetch_assoc();
+
+                    //verify the password
+                    if(password_verify($password, $row['password'])) {
+                        //store user info in a session
+                        $_SESSION['user_id'] = $row['id'];
+                        $_SESSION['username'] = $row['username'];
+
+                        //redirect to the home page
+                        header("Location: home.php");
+                        exit();
+                    } else {
+                        echo "Invalid password!";
+                    }
+                } else {
+                    echo "Invalid username!";
+                }
+
+                $stmt->close();
+            }
+
+            $conn->close();
+        ?>
         <p>Don't have an account? <a href="account.php">Create one here!</a></p>
     </div>
 </body>
