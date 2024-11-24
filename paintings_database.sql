@@ -1,19 +1,22 @@
-drop database if exists worldofcolourdb;
+-- Create database if it doesn't exist
+CREATE DATABASE IF NOT EXISTS worldofcolourdb;
 
-create database worldofcolourdb;
-use worldofcolourdb;
+-- Select the database to use
+USE worldofcolourdb;
 
-create table userData (
-    ID int AUTO_INCREMENT primary key,
-    Username varchar(255) NOT NULL,
-    Email varchar(255) NOT NULL,
-    Password varchar(255) NOT NULL
+-- Create table userData if it doesn't exist
+CREATE TABLE IF NOT EXISTS userData (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    Username VARCHAR(255) NOT NULL,
+    Email VARCHAR(255) NOT NULL,
+    Password VARCHAR(255) NOT NULL
 );
 
-create table painting(
-    ID int AUTO_INCREMENT primary key,
+-- Create table painting if it doesn't exist
+CREATE TABLE IF NOT EXISTS painting (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
     Paintingdata LONGBLOB,
-    PaintingName varchar(255) NOT NULL,
-    Artist varchar(255) NOT NULL,
-    Year int NOT NULL
+    PaintingName VARCHAR(255) NOT NULL,
+    Artist VARCHAR(255) NOT NULL,
+    Year INT NOT NULL
 );
