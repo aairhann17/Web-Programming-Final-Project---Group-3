@@ -9,12 +9,12 @@
 <body class="account-page">
     <!-- Navbar -->
     <div class="navbar">
-        <a href="home.html">Home</a>
-        <a href="artists.html">Artists</a>
-        <a href="home.html#about">About Us</a>
-        <a href="home.html#contact">Contact</a>
-        <a href="login.html">Login</a>
-        <a href="account.html">Sign Up</a>
+        <a href="home.php">Home</a>
+        <a href="artists.php">Artists</a>
+        <a href="home.php#about">About Us</a>
+        <a href="home.php#contact">Contact</a>
+        <a href="login.php">Login</a>
+        <a href="account.php">Sign Up</a>
     </div>
 
     <!-- Create Account Form -->
@@ -36,7 +36,7 @@
             </div>
             <button type="submit">Create Account</button>
         </form>
-        <p>Already have an account? <a href="login.html">Login here!</a></p>
+        <p>Already have an account? <a href="login.php">Login here!</a></p>
     </div>
 </body>
 </html>

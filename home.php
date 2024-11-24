@@ -10,11 +10,11 @@
     <!-- Navigation Bar -->
     <div class="navbar">
         <a href="#home">Home</a>
-        <a href="artists.html">Artists</a>
+        <a href="artists.php">Artists</a>
         <a href="#about">About Us</a>
         <a href="#contact">Contact</a>
-        <a href="login.html">Login</a>
-        <a href="account.html">Sign Up</a>
+        <a href="login.php">Login</a>
+        <a href="account.php">Sign Up</a>
     </div>
 
     <!-- Main Content -->
