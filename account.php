@@ -20,7 +20,7 @@
     <!-- Create Account Form -->
     <div class="account-container">
         <h2>Create Account</h2>
-        <form action="/create-account" method="POST">
+        <form action="register.php" method="POST">
             <div class="form-group">
                 <label for="username">Username</label>
                 <input type="text" id="username" name="username" placeholder="Enter your username" required>
