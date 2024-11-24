@@ -12,10 +12,10 @@ CREATE TABLE IF NOT EXISTS userData (
     Password VARCHAR(255) NOT NULL
 );
 
--- Create table painting if it doesn't exist
-CREATE TABLE IF NOT EXISTS painting (
+-- Create table uploadedPaintings if it doesn't exist
+CREATE TABLE IF NOT EXISTS uploadedPaintings (
     ID INT AUTO_INCREMENT PRIMARY KEY,
-    Paintingdata LONGBLOB,
+    PaintingPath VARCHAR(255) NOT NULL,
     PaintingName VARCHAR(255) NOT NULL,
     Artist VARCHAR(255) NOT NULL,
     Year INT NOT NULL

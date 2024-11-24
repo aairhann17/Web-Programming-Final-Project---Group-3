@@ -1,46 +1,58 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial scale=1.0">
-	<title>Image Upload - A World Of Colour </title>
-	<link rel="stylesheet" href="styles.css">
-</head>
-<body class = "image-upload-body">
-	<div class = "image-upload-body">
-		<h1>Please insert your image</h1>
-		<form method="POST" action="" enctype="multipart/form-data">
-			<input type="file" accept="image/jpeg, image/png, image/jpg">
-			<button type="submit">Upload Image</button>
-		</form>
+<?php
+// Create a connection to the database
+require_once('config.inc.php');
+$conn = new mysqli(HOST, USER, PASSWORD, DB, PORT);
 
-		<?php
-		if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['image'])) {
-			$uploadDir = 'paintings/';
-			$file = $_FILES['image'];
-		
-			//validate file type
-			$allowedTypes = ['image/jpeg', 'image/png', 'image/jpg'];
-			if(!in_array($file['type'], $allowedTypes)) {
-				echo "<p style='color: red;'>Invalid file type. Only JPEG, JPG, and PNG are allowed.</p>";
-			} else {
-				//generate a unique file name for the file
-				$fileName = uniqid() . '-' . basename($file['name']);
-				$targetPath = $uploadDir . $fileName;
+// Check connection for errors
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
 
-				//create the upload directory if it doesn't exist
-				if(!is_dir($uploadDir)) {
-					mkdir($uploadDir, 0777, true);
-				}
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // Get form data
+    $painting_name = $_POST['paintingName'];
+    $artist = $_POST['artistName'];
+    $year = $_POST['year'];
 
-				//move the uploaded file to the targeted directory
-				if(move_uploaded_file($file['tmp_name'], $targetPath)) {
-					echo "<p style='color: green;'>Image Uploaded Successfully! <a href='$targetPath'>View Image</a></p>";
-				} else {
-					echo "<p style='color: red;'>Failed to upload the image.</p>";
-				}
-			}
-		}		
-		?>
-   	</div>
-</body>
+    // Handle file upload
+    if (isset($_FILES['inputFile']) && $_FILES['inputFile']['error'] === UPLOAD_ERR_OK) {
+        $imageTmpPath = $_FILES['inputFile']['tmp_name'];
+        $imageName = $_FILES['inputFile']['name'];
+        $imageSize = $_FILES['inputFile']['size'];
+        $imageType = $_FILES['inputFile']['type'];
+
+        // Set the target directory where images will be stored
+        $uploadDir = "uploads/"; // Ensure this directory exists or create it
+
+        // Create a unique filename to avoid conflicts
+        $uniqueName = uniqid() . "-" . basename($imageName);
+        $targetFilePath = $uploadDir . $uniqueName;
+
+        // Move the uploaded file to the target directory
+        if (move_uploaded_file($imageTmpPath, $targetFilePath)) {
+            // Insert data into the database
+            $sql = "INSERT INTO uploadedPaintings (PaintingPath, PaintingName, Artist, Year) VALUES (?, ?, ?, ?)";
+            
+            // Prepare and bind
+            if ($stmt = $conn->prepare($sql)) {
+                $stmt->bind_param("sssi", $targetFilePath, $painting_name, $artist, $year);
+
+                if ($stmt->execute()) {
+                    echo "Painting uploaded successfully!";
+                } else {
+                    echo "Error: " . $stmt->error;
+                }
+                $stmt->close();
+            } else {
+                echo "Error: " . $conn->error;
+            }
+        } else {
+            echo "Error uploading file!";
+        }
+    } else {
+        echo "No file uploaded or there was an error with the file!";
+    }
+}
+
+$conn->close();
+?>
