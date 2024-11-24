@@ -41,7 +41,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             // Execute the query
             if ($stmt->execute()) {
-                echo "User registered successfully!";
+                header("Location: home.php");
+                exit();
             } else {
                 echo "Error: " . $stmt->error;
             }
