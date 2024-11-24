@@ -17,43 +17,40 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     //validate the inputs
     if(empty($username) || empty($email) || empty($password)) {
-        echo "All fields are required! Please fill all of them in!";
-        exit();
-    }
+        $message = "All fields are required!";
+    } else if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $message = "Invalid email format! Try something like johnsmith123@gmail.com";
+    } else {
+        //checks if username, email, or password has already been used
+        $checkStmt = $conn->prepare("SELECT * FROM userData WHERE Username = ? OR Email = ?");
+        $checkStmt->bind_param("ss", $username, $email);
+        $checkStmt->execute();
+        $result = $checkStmt->get_result();
 
-    if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        echo "Invalid email format! Please input something like this: john.smith@gmail.com";
-        exit();
-    }
+        if($result->num_rows > 0) {
+            $message = "Username or email already in use!";
+        } else {
+            // Hash the password before storing it in the database for security
+            $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-    //checks if username, email, or password has already been used
-    $checkStmt = $conn->prepare("SELECT * FROM userData WHERE Username = ? OR Email = ?");
-    $checkStmt->bind_param("ss", $username, $email);
-    $checkStmt->execute();
-    $result = $checkStmt->get_result();
+            // Prepare and bind the SQL statement
+            $stmt = $conn->prepare("INSERT INTO userData (Username, Email, Password) VALUES (?, ?, ?)");
+            $stmt->bind_param("sss", $username, $email, $hashed_password);
 
-    if($result->num_rows > 0) {
-        echo "Username or email is already in use!";
-        $checkStmt->close();
-        exit();
+            // Execute the query
+            if ($stmt->execute()) {
+                echo "User registered successfully!";
+            } else {
+                echo "Error: " . $stmt->error;
+            }
+        }
+        $stmt->close();
     }
     $checkStmt->close();
     
-    // Hash the password before storing it in the database for security
-    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-    // Prepare and bind the SQL statement
-    $stmt = $conn->prepare("INSERT INTO userData (Username, Email, Password) VALUES (?, ?, ?)");
-    $stmt->bind_param("sss", $username, $email, $hashed_password);
-
-    // Execute the query
-    if ($stmt->execute()) {
-        echo "User registered successfully!";
-    } else {
-        echo "Error: " . $stmt->error;
-    }
 
     // Close the statement and connection
-    $stmt->close();
+    $conn->close();
 }
 ?>
