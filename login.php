@@ -20,7 +20,7 @@
      <!-- Login Content -->
     <div class="login-container">
         <h2>Login</h2>
-        <form action="/login" method="POST">
+        <form action="login.php" method="POST">
             <div class="form-group">
                 <label for="username">Username</label>
                 <input type="text" id="username" name="username" required>
@@ -69,9 +69,9 @@
                         $_SESSION['user_id'] = $row['id'];
                         $_SESSION['username'] = $row['username'];
 
-                        //redirect to the home page
-                        header("Location: home.php");
-                        exit();
+                        // //redirect to the home page
+                        // header("home.php");
+                        // exit();
                     } else {
                         echo "Invalid password!";
                     }
