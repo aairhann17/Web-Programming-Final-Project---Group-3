@@ -23,8 +23,7 @@
 	By 	Leonardo Da Vinci (1503) </h2>
 	<div class = "container">
 	<div class="textbox">
-		<p> This is a paragraph about artist one <br>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tincidunt vel lacus in varius. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus non placerat lacus. Nullam malesuada ultrices elit non mattis. Ut accumsan lobortis odio nec maximus. Donec aliquet urna sed sapien euismod, et volutpat lacus dictum. Proin nec urna orci. Nunc tincidunt vel massa id tincidunt. Donec varius sem sit amet tristique ultrices. Suspendisse id eros turpis. Phasellus vitae dolor est. Aenean mi augue, suscipit sed commodo et, dictum sed tortor. Maecenas rhoncus blandit ipsum vitae mollis. </p>
+		<p> The Mona Lisa is considered a masterpiece of the Italian renaissance and is one of, if not the, most known, most visited, and most parodied works of art in the world. The painting is known to depict Italian noblewoman Lisa del Giocondo. First painted in 1503 the Mona Lisa now resides in the Louvre in Paris since its acquisition in 1797.  </p>
 	</div>
 		<img src="paintings/mona_lisa.jpg"
 		width="250"
@@ -43,8 +42,7 @@
 		width="500"
 		height="350">
 	<div class="textbox">
-		<p> This is a paragraph about artist two <br>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tincidunt vel lacus in varius. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus non placerat lacus. Nullam malesuada ultrices elit non mattis. Ut accumsan lobortis odio nec maximus. Donec aliquet urna sed sapien euismod, et volutpat lacus dictum. Proin nec urna orci. Nunc tincidunt vel massa id tincidunt. Donec varius sem sit amet tristique ultrices. Suspendisse id eros turpis. Phasellus vitae dolor est. Aenean mi augue, suscipit sed commodo et, dictum sed tortor. Maecenas rhoncus blandit ipsum vitae mollis. </p>
+		<p>  Starry Night depicts the view from painter Vincent van Gogh’s room at the Saint Remy de Provence insane asylum with van Gogh having added a false village in the background. The artwork is widely regarded as the magnum opus of its creator and is one of the most identifiable pieces of western art. It is a part of the permanent collection of the Museum of Modern Art in New York City ever since 1941.</p>
 	</div>
 		
 	</div>
@@ -60,8 +58,7 @@
 	<div class = "container">
 		
 	<div class="textbox">
-		<p> This is a paragraph about artist three <br>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tincidunt vel lacus in varius. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus non placerat lacus. Nullam malesuada ultrices elit non mattis. Ut accumsan lobortis odio nec maximus. Donec aliquet urna sed sapien euismod, et volutpat lacus dictum. Proin nec urna orci. Nunc tincidunt vel massa id tincidunt. Donec varius sem sit amet tristique ultrices. Suspendisse id eros turpis. Phasellus vitae dolor est. Aenean mi augue, suscipit sed commodo et, dictum sed tortor. Maecenas rhoncus blandit ipsum vitae mollis. </p>
+		<p> Christ in the Storm on the Sea of Galilee is one of Dutch golden age painter Rembrandt  van Rijn’s earliest and largest works, measuring 63 by 50 inches. The work depicts the biblical event in which Jesus calmed the Storm on the Sea of Galilee. The painting was on display in the Isabella Stewart Gardner Museum in Boston from 1869 to 1990 when it was stolen. The current location of this painting is unknown.</p>
 	</div>
 		<img src="paintings/storm_on_the_lake.jpg"
 		width="350"
